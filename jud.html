@@ -1,0 +1,448 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Share your favourite Pictures and add special Captions">
+    <title>Awesome Pixx</title>
+    <link rel="shortcut icon" type="image/svg+xml" href="/static/images/fireheart_red.d097472d26dd.svg"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/htmx.org/dist/htmx.js"></script>
+    <script src="/static/js/hyperscript.min.91f5866df1ea.js" defer></script>
+    <link rel="stylesheet" href="/static/css/style.min.1afb9e7228c7.css">
+</head>
+<body class="bg-gray-100">
+
+<header x-data="{ mobilenavOpen: false, chatOpen: false }" class="md:flex items-center justify-between [&>*]:px-4 bg-gray-800 h-20 text-white sticky top-0 z-40">
+    <div class="flex items-center justify-between h-20">
+        <logo>
+            <a class="flex items-center gap-1" href="/">
+                <img class="w-6 -mt-1 mr-1" src="https://awesomepixx.com/static/images/fireheart_white.40164b6ddf66.svg"/>
+                <span class="text-lg font-bold">Awesome Pixx</span>
+            </a>
+        </logo>
+        <mobileicon class="md:hidden">
+            <a @click="mobilenavOpen = !mobilenavOpen" class="h-12 px-0 flex items-center justify-center cursor-pointer hover:bg-gray-700 rounded-lg">
+                
+                <img x-show="!mobilenavOpen" class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/menu.png"/> 
+                <img x-show="mobilenavOpen" x-cloak class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/delete-sign.png"/>
+            </a>
+        </mobileicon>
+    </div>
+    <nav x-show="mobilenavOpen" x-cloak class="md:!block bg-gray-800 h-screen w-screen md:h-auto md:w-auto -mt-20 md:mt-0 absolute md:relative z-[-1]"
+    x-transition:enter="duration-300 ease-out"
+    x-transition:enter-start="opacity-0 -translate-y-96"
+    x-transition:enter-end="opacity-100 translate-y-0">
+        <ul class="flex items-center navitems flex-col md:flex-row gap-8 md:gap-0 justify-center h-full -translate-y-10 md:translate-y-0 z-20">
+            
+            <li><a href="/accounts/login/">Log In</a></li>
+            <li><a href="/accounts/signup/">Sign Up</a></li>
+        </ul>
+    </nav>
+</header>
+
+<hero class="grid bg-gray-700 text-white text-center bg-cover z-10 relative bg-[url('https://live.staticflickr.com/65535/49909538937_3255dcf9e7_b.jpg')]">
+    <div class="col-start-1 row-start-1 bg-gray-800/40 w-full h-full"></div>
+    <div class="col-start-1 row-start-1 py-24 px-10 ">
+        <h1 class="font1 text-6xl title-fadein">Awesome Pics & Captions</h1>
+        <p class="text-lg font-bold mb-5">Share your favorite Pictures from Flickr and add special Captions</p>
+        
+        <a class="button" href="/accounts/signup/">Get Started</a>
+        
+    </div>
+    <div class="absolute right-4 bottom-4 text-xs font-light opacity-50 hover:opacity-100">
+        Flickr <a href="https://www.flickr.com/photos/184625933@N06/49909538937/" target="_blank">@Neelakandan S</a>
+    </div>
+</hero>
+
+
+<content x-data="{ mobileSidebarOpen: false }" class="grid grid-cols-3 max-w-7xl mx-auto my-6 px-3">
+    <mobileSidebarNav class="md:hidden col-span-full mx-auto mb-6 z-10 relative">
+        <a @click="mobileSidebarOpen = !mobileSidebarOpen" class="flex items-center cursor-pointer select-none font-bold hover:bg-gray-200 rounded-lg p-3">
+            <span>Categories</span>
+            <img x-bind:class="mobileSidebarOpen && 'rotate-180 duration-300'" class="w-4 ml-1.5" src="https://img.icons8.com/small/32/000000/expand-arrow.png" />
+        </a>
+    </mobileSidebarNav>
+
+    <main class="col-span-full md:col-span-2 md:mr-[5%] lg:mx-[10%] order-2 md:order-1">
+
+    
+
+
+
+<article class="card">
+    <div class="flex items-center justify-between px-4 h-14">
+        <h3 class="text-start leading-5 mr-1">éléph bw-7600</h3>
+        <div class="text-sm text-gray-400 truncate">flickr<a href="https://www.flickr.com/photos/158365943@N06/52992670764/in/explore-2023-06-23/" class="hover:underline ml-1" target="blank">@Didier Delouvrier</a></div>
+    </div>
+
+    <figure>
+        <a href="/post/83c07920-3ecd-4fa3-980c-f36792e3f192/"><img class="w-full" src="https://live.staticflickr.com/65535/52992670764_8d49a44556_b.jpg"></a>
+    </figure>
+
+    <div class="p-4 pb-2">
+        
+        <a class="flex items-center gap-1 mb-4" href="/ethan/">
+            <img class="w-8 h-8 object-cover rounded-full" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_7.07.22_pm_vdrxie">
+            <span class="font-bold hover:underline">Ethan Miller</span>
+            <span class="text-sm text-gray-400">@ethan</span>
+        </a>
+        
+        <p class="text-5xl mb-10 px-4 font1">A force of nature</p>
+        <div class="flex items-center gap-2 text-sm mb-5 flex-wrap">
+            
+            <a href="/category/animals/" class="bg-gray-200 rounded-full px-3 py-2 hover:bg-gray-800 hover:text-white">Animals</a>
+            
+            <a href="/category/blackandwhite/" class="bg-gray-200 rounded-full px-3 py-2 hover:bg-gray-800 hover:text-white">Black &amp; White</a>
+            
+        </div>
+        <div class="flex items-center justify-between text-sm px-2">
+            <a id="comments-count-83c07920-3ecd-4fa3-980c-f36792e3f192" class="font-bold hover:bg-gray-800 hover:rounded-full hover:px-4 hover:py-3 hover:-ml-2 hover:text-white transition-all" href="/post/83c07920-3ecd-4fa3-980c-f36792e3f192/">
+            </a>
+            <div class="flex items-center gap-4 [&>a:hover]:underline">
+                <div class="flex items-center gap-1">
+                    <img class="w-4 -mt-1" src="/static/images/fireheart.f77587bd5feb.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<article class="card">
+    <div class="flex items-center justify-between px-4 h-14">
+        <h3 class="text-start leading-5 mr-1">HaLong seascape</h3>
+        <div class="text-sm text-gray-400 truncate">flickr<a href="https://www.flickr.com/photos/ph_p_ph/52994707472/in/explore-2023-06-23/" class="hover:underline ml-1" target="blank">@ph.p.ph.  ©         Paolo Paccagnella</a></div>
+    </div>
+
+    <figure>
+        <a href="/post/6ccf4d8a-338f-492d-9a4a-1713a19e0b3e/"><img class="w-full" src="https://live.staticflickr.com/65535/52994707472_cf31400225_b.jpg"></a>
+    </figure>
+
+    <div class="p-4 pb-2">
+        
+        <a class="flex items-center gap-1 mb-4" href="/lunasky/">
+            <img class="w-8 h-8 object-cover rounded-full" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_6.08.33_pm_mcxroe">
+            <span class="font-bold hover:underline">Luna</span>
+            <span class="text-sm text-gray-400">@lunasky</span>
+        </a>
+        
+        <p class="text-5xl mb-10 px-4 font1">Peace of mind and soul</p>
+        <div class="flex items-center gap-2 text-sm mb-5 flex-wrap">
+            
+            <a href="/category/landscape/" class="bg-gray-200 rounded-full px-3 py-2 hover:bg-gray-800 hover:text-white">Landscape</a>
+            
+        </div>
+        <div class="flex items-center justify-between text-sm px-2">
+            <a id="comments-count-6ccf4d8a-338f-492d-9a4a-1713a19e0b3e" class="font-bold hover:bg-gray-800 hover:rounded-full hover:px-4 hover:py-3 hover:-ml-2 hover:text-white transition-all" href="/post/6ccf4d8a-338f-492d-9a4a-1713a19e0b3e/">
+                
+                Comments
+                <span class="font-light ml-1">2</span>
+                
+            </a>
+
+            
+<div class="flex items-center gap-4 [&>a:hover]:underline">
+    <div class="flex items-center gap-1">
+
+        
+            
+            <img class="w-4 -mt-1" src="/static/images/fireheart.f77587bd5feb.svg">
+            
+
+            3
+        
+
+    </div>
+
+    
+
+    
+</div>
+            
+        </div>
+    </div>
+</article>
+
+
+<article class="card">
+    <div class="flex items-center justify-between px-4 h-14">
+        <h3 class="text-start leading-5 mr-1">Last Light on Le Tre Cime</h3>
+        <div class="text-sm text-gray-400 truncate">flickr<a href="https://www.flickr.com/photos/amstermarc/52965471241/in/explore-2023-06-11/" class="hover:underline ml-1" target="blank">@Marco</a></div>
+    </div>
+
+    <figure>
+        <a href="/post/a95eeba8-5d20-474c-9bf3-8d0ae18f1275/"><img class="w-full" src="https://live.staticflickr.com/65535/52965471241_48341578e8_b.jpg"></a>
+    </figure>
+
+    <div class="p-4 pb-2">
+        
+        <a class="flex items-center gap-1 mb-4" href="/andyjud/">
+            <img class="w-8 h-8 object-cover rounded-full" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/ape3_pxw8oh">
+            <span class="font-bold hover:underline">Andreas Jud</span>
+            <span class="text-sm text-gray-400">@andyjud</span>
+        </a>
+        
+        <p class="text-5xl mb-10 px-4 font1">Magical sunset in one of the most breathtaking places on earth</p>
+        <div class="flex items-center gap-2 text-sm mb-5 flex-wrap">
+            
+            <a href="/category/landscape/" class="bg-gray-200 rounded-full px-3 py-2 hover:bg-gray-800 hover:text-white">Landscape</a>
+            
+        </div>
+        <div class="flex items-center justify-between text-sm px-2">
+            <a id="comments-count-a95eeba8-5d20-474c-9bf3-8d0ae18f1275" class="font-bold hover:bg-gray-800 hover:rounded-full hover:px-4 hover:py-3 hover:-ml-2 hover:text-white transition-all" href="/post/a95eeba8-5d20-474c-9bf3-8d0ae18f1275/">
+                
+                Comments
+                <span class="font-light ml-1">1</span>
+                
+            </a>
+
+            
+<div class="flex items-center gap-4 [&>a:hover]:underline">
+    <div class="flex items-center gap-1">
+
+        
+            
+            <img class="w-4 -mt-1" src="/static/images/fireheart.f77587bd5feb.svg">
+            
+
+            4
+        
+
+    </div>
+
+    
+
+    
+</div>
+            
+        </div>
+    </div>
+</article>
+
+
+<div class="opacity-0"
+    hx-get="/?page=2"
+    hx-trigger="revealed"
+    hx-target="this"
+    hx-swap="outerHTML">
+    Loading
+</div>
+    
+
+
+    </main>
+
+    
+    
+<aside x-show="mobileSidebarOpen" x-cloak class="md:!block col-span-full md:col-span-1 lg:mr-[20%] order-1 md:order-2"
+    x-transition:enter="duration-300 ease-out"
+    x-transition:enter-start="opacity-0 -mt-96"
+    x-transition:enter-end="opacity-100 mt-0">
+        <section class="card p-4">
+            <ul class="hoverlist">
+                
+                <li class="">
+                    <a href="/category/landscape/">
+                        <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_landscape_x1rlaj">
+                        <span class="font-bold text-sm">Landscape</span>
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category/animals/">
+                        <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_animals_itgu03">
+                        <span class="font-bold text-sm">Animals</span>
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category/people/">
+                        <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_people_wrgejj">
+                        <span class="font-bold text-sm">People</span>
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category/urban/">
+                        <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_urban_m3lu17">
+                        <span class="font-bold text-sm">Urban</span>
+                    </a>
+                </li>
+                
+                <li class="">
+                    <a href="/category/blackandwhite/">
+                        <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_blackandwhite_v26o9e">
+                        <span class="font-bold text-sm">Black &amp; White</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        <section class="card p-4">
+            <div class="flex items-center">
+                <img class="w-6 mr-2 -mt-3" src="/static/images/fireheart_black.a0137f7b5aeb.svg"/>
+                <h2>Top Posts</h2>
+            </div>
+            <ul class="hoverlist">
+                
+                <li>
+                    <a href="/post/a95eeba8-5d20-474c-9bf3-8d0ae18f1275/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/65535/52965471241_48341578e8_b.jpg">
+                            
+                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/ape3_pxw8oh">
+                            <span class="font-bold text-sm mr-1">andyjud</span>
+                            
+                        </div>
+                        <span class="text-sm font-light text-grey-500 shrink-0">
+                            4 
+                            <span class="">Likes</span>
+                             / 1</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/post/6ccf4d8a-338f-492d-9a4a-1713a19e0b3e/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/65535/52994707472_cf31400225_b.jpg">
+                            
+                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_6.08.33_pm_mcxroe">
+                            <span class="font-bold text-sm mr-1">lunasky</span>
+                            
+                        </div>
+                        <span class="text-sm font-light text-grey-500 shrink-0">
+                            3 
+                            <span class="">Likes</span>
+                             / 2</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/post/16e90a74-a608-4266-9c1c-68a64e3bd4f6/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/310/32380104206_da34eaf75a_b.jpg">
+                            
+                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/ape3_pxw8oh">
+                            <span class="font-bold text-sm mr-1">andyjud</span>
+                            
+                        </div>
+                        <span class="text-sm font-light text-grey-500 shrink-0">
+                            2 
+                            <span class="">Likes</span>
+                             / 2</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/post/83c07920-3ecd-4fa3-980c-f36792e3f192/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/65535/52992670764_8d49a44556_b.jpg">
+                            
+                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_7.07.22_pm_vdrxie">
+                            <span class="font-bold text-sm mr-1">ethan</span>
+                            
+                        </div>
+                        <span class="text-sm font-light text-grey-500 shrink-0">
+                            1 
+                            <span class="">Like</span>
+                             / 0</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        <section class="card p-4">
+            <div class="flex items-center">
+                <img class="w-6 mr-2 -mt-3" src="/static/images/fireheart_black.a0137f7b5aeb.svg"/>
+                <h2>Top Comments</h2>
+            </div>
+            <ul class="hoverlist">
+                
+                <li>
+                    <a href="/post/a95eeba8-5d20-474c-9bf3-8d0ae18f1275/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            
+                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_6.08.33_pm_mcxroe">
+                            
+                            <span class="text-sm mr-1 truncate">
+                                
+                                <span class="font-bold">lunasky:</span>
+                                
+                                Magnificie…</span>
+                        </div>
+                        <span class="text-sm font-light text-grey-500 shrink-0">
+                            2 
+                            <span class="">Likes</span>
+                             / 0</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/post/16e90a74-a608-4266-9c1c-68a64e3bd4f6/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            
+                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_7.07.22_pm_vdrxie">
+                            
+                            <span class="text-sm mr-1 truncate">
+                                
+                                <span class="font-bold">ethan:</span>
+                                
+                                Timeless b…</span>
+                        </div>
+                        <span class="text-sm font-light text-grey-500 shrink-0">
+                            1 
+                            <span class="">Like</span>
+                             / 0</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </section>
+        <section class="card p-4">
+            <div class="flex items-center mb-2">
+                <h3>Support this site</h3>
+            </div>
+            <ul>
+                <li class="mb-2">
+                    <a href="https://patreon.com/andreasjud" target="_blank" class="flex items-center">
+                        <div class="w-10">
+                            <img class="h-8 mr-1" alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg">
+                        </div>
+                        <span class="">Become my Patreon</span>
+                    </a>
+                </li>
+                <li class="mb-2">
+                    <a href="https://www.buymeacoffee.com/andreasjud" target="_blank" class="flex items-center">
+                        <div class="w-10">
+                            <img class="h-8 mr-1" alt="patreon" src="/static/images/bmc-logo.0b4b4ef29305.svg">
+                        </div>
+                        <span class="">Buy me a coffee</span>
+                    </a>
+                </li>
+            </ul>
+            <div>
+                <a class="text-sm font-bold text-right block" href="/ajudmeister/">
+                    Thank you &#x2665; &nbsp &#8594;
+                </a>
+            </div>
+        </section>
+    </aside>
+
+</content>
+
+
+ 
+    
+    
+
+</body>
+</html>
