@@ -21,31 +21,33 @@
 <body class="bg-gray-300">
 
 <header x-data="{ mobilenavOpen: false, chatOpen: false }" class="md:flex items-center justify-between [&>*]:px-4 bg-gray-800 h-20 text-white sticky top-0 z-40">
-    <div class="flex items-center justify-between h-20">
-        <logo>
-            <a class="flex items-center gap-1" href="/">
-                <span class=" px-2 border text-lg font-bold">IRVING</span>
-                <span class="font-thin mx-2">Dev + Design</span>
-            </a>
-        </logo>
-        <mobileicon class="md:hidden">
-            <a @click="mobilenavOpen = !mobilenavOpen" class="h-12 px-0 flex items-center justify-center cursor-pointer hover:bg-gray-700 rounded-lg">
+    <div class="flex items-center justify-between h-20 w-7xl mx-auto">
+        <div class="flex items-center justify-between h-20">
+            <logo>
+                <a class="flex items-center gap-1" href="/">
+                    <span class=" px-2 border text-lg font-bold">IRVING</span>
+                    <span class="font-thin mx-2">Dev + Design</span>
+                </a>
+            </logo>
+            <mobileicon class="md:hidden">
+                <a @click="mobilenavOpen = !mobilenavOpen" class="h-12 px-0 flex items-center justify-center cursor-pointer hover:bg-gray-700 rounded-lg">
+                    
+                    <img x-show="!mobilenavOpen" class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/menu.png"/> 
+                    <img x-show="mobilenavOpen" x-cloak class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/delete-sign.png"/>
+                </a>
+            </mobileicon>
+        </div>
+        <nav x-show="mobilenavOpen" x-cloak class="md:!block md:bg-gray-50/0 bg-gray-400 h-screen w-screen md:h-auto md:w-auto -mt-20 md:mt-0 absolute md:relative z-[-1]"
+        x-transition:enter="duration-300 ease-out"
+        x-transition:enter-start="opacity-0 -translate-y-96"
+        x-transition:enter-end="opacity-100 translate-y-0">
+            <ul class="flex items-center navitems flex-col md:flex-row justify-center h-full -translate-y-10 md:translate-y-0 z-20 md:space-x-6 md:space-y-0 space-y-16">
                 
-                <img x-show="!mobilenavOpen" class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/menu.png"/> 
-                <img x-show="mobilenavOpen" x-cloak class="w-6 h-6 select-none" src="https://img.icons8.com/small/64/ffffff/delete-sign.png"/>
-            </a>
-        </mobileicon>
+                <li><a href="/accounts/login/">Home</a></li>
+                <li><a href="/accounts/signup/">Works</a></li>
+            </ul>
+        </nav>
     </div>
-    <nav x-show="mobilenavOpen" x-cloak class="md:!block md:bg-gray-50/0 bg-gray-400 h-screen w-screen md:h-auto md:w-auto -mt-20 md:mt-0 absolute md:relative z-[-1]"
-    x-transition:enter="duration-300 ease-out"
-    x-transition:enter-start="opacity-0 -translate-y-96"
-    x-transition:enter-end="opacity-100 translate-y-0">
-        <ul class="flex items-center navitems flex-col md:flex-row justify-center h-full -translate-y-10 md:translate-y-0 z-20 md:space-x-6 md:space-y-0 space-y-16">
-            
-            <li><a href="/accounts/login/">Home</a></li>
-            <li><a href="/accounts/signup/">Works</a></li>
-        </ul>
-    </nav>
 </header>
 
 <hero 
@@ -217,183 +219,57 @@
     x-transition:enter-start="opacity-0 -mt-96"
     x-transition:enter-end="opacity-100 mt-0">
         <section class="card p-4">
-            <ul class="hoverlist">
-                
+            <ul class="hoverlist space-y-6">
                 <li class="">
                     <a href="/category/landscape/">
                         <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_landscape_x1rlaj">
-                        <span class="font-bold text-sm">Landscape</span>
+                        <span class="font-bold text-sm">Web Development</span>
                     </a>
                 </li>
-                
                 <li class="">
                     <a href="/category/animals/">
                         <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_animals_itgu03">
-                        <span class="font-bold text-sm">Animals</span>
+                        <span class="font-bold text-sm">Graphic Design</span>
                     </a>
                 </li>
-                
                 <li class="">
                     <a href="/category/people/">
                         <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_people_wrgejj">
-                        <span class="font-bold text-sm">People</span>
-                    </a>
-                </li>
-                
-                <li class="">
-                    <a href="/category/urban/">
-                        <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_urban_m3lu17">
-                        <span class="font-bold text-sm">Urban</span>
-                    </a>
-                </li>
-                
-                <li class="">
-                    <a href="/category/blackandwhite/">
-                        <img class="w-8 h-8 object-cover mr-2" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/icons/icon_blackandwhite_v26o9e">
-                        <span class="font-bold text-sm">Black &amp; White</span>
-                    </a>
-                </li>
-                
-            </ul>
-        </section>
-        <section class="card p-4">
-            <div class="flex items-center">
-                <img class="w-6 mr-2 -mt-3" src="/static/images/fireheart_black.a0137f7b5aeb.svg"/>
-                <h2>Top Posts</h2>
-            </div>
-            <ul class="hoverlist">
-                
-                <li>
-                    <a href="/post/a95eeba8-5d20-474c-9bf3-8d0ae18f1275/" class="flex items-stretch justify-between">
-                        <div class="flex items-center truncate">
-                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/65535/52965471241_48341578e8_b.jpg">
-                            
-                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/ape3_pxw8oh">
-                            <span class="font-bold text-sm mr-1">andyjud</span>
-                            
-                        </div>
-                        <span class="text-sm font-light text-grey-500 shrink-0">
-                            4 
-                            <span class="">Likes</span>
-                             / 1</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/post/6ccf4d8a-338f-492d-9a4a-1713a19e0b3e/" class="flex items-stretch justify-between">
-                        <div class="flex items-center truncate">
-                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/65535/52994707472_cf31400225_b.jpg">
-                            
-                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_6.08.33_pm_mcxroe">
-                            <span class="font-bold text-sm mr-1">lunasky</span>
-                            
-                        </div>
-                        <span class="text-sm font-light text-grey-500 shrink-0">
-                            3 
-                            <span class="">Likes</span>
-                             / 2</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/post/16e90a74-a608-4266-9c1c-68a64e3bd4f6/" class="flex items-stretch justify-between">
-                        <div class="flex items-center truncate">
-                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/310/32380104206_da34eaf75a_b.jpg">
-                            
-                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/ape3_pxw8oh">
-                            <span class="font-bold text-sm mr-1">andyjud</span>
-                            
-                        </div>
-                        <span class="text-sm font-light text-grey-500 shrink-0">
-                            2 
-                            <span class="">Likes</span>
-                             / 2</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/post/83c07920-3ecd-4fa3-980c-f36792e3f192/" class="flex items-stretch justify-between">
-                        <div class="flex items-center truncate">
-                            <img class="w-10 h-10 rounded-lg object-cover mr-3 shrink-0" src="https://live.staticflickr.com/65535/52992670764_8d49a44556_b.jpg">
-                            
-                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_7.07.22_pm_vdrxie">
-                            <span class="font-bold text-sm mr-1">ethan</span>
-                            
-                        </div>
-                        <span class="text-sm font-light text-grey-500 shrink-0">
-                            2 
-                            <span class="">Like</span>
-                             / 0</span>
-                    </a>
-                </li>
-                
-            </ul>
-        </section>
-        <section class="card p-4">
-            <div class="flex items-center">
-                <img class="w-6 mr-2 -mt-3" src="/static/images/fireheart_black.a0137f7b5aeb.svg"/>
-                <h2>Top Comments</h2>
-            </div>
-            <ul class="hoverlist">
-                <li>
-                    <a href="/post/a95eeba8-5d20-474c-9bf3-8d0ae18f1275/" class="flex items-stretch justify-between">
-                        <div class="flex items-center truncate">
-                            
-                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_6.08.33_pm_mcxroe">
-                            
-                            <span class="text-sm mr-1 truncate">
-                                
-                                <span class="font-bold">lunasky:</span>
-                                
-                                Magnificie…</span>
-                        </div>
-                        <span class="text-sm font-light text-grey-500 shrink-0">
-                            2 
-                            <span class="">Likes</span>
-                             / 0</span>
-                    </a>
-                </li>
-                
-                <li>
-                    <a href="/post/16e90a74-a608-4266-9c1c-68a64e3bd4f6/" class="flex items-stretch justify-between">
-                        <div class="flex items-center truncate">
-                            
-                            <img class="w-6 h-6 rounded-full object-cover mr-1" src="https://res.cloudinary.com/dot3mopru/image/upload/v1/media/avatars/Screenshot_2023-06-24_at_7.07.22_pm_vdrxie">
-                            
-                            <span class="text-sm mr-1 truncate">
-                                
-                                <span class="font-bold">ethan:</span>
-                                
-                                Timeless b…</span>
-                        </div>
-                        <span class="text-sm font-light text-grey-500 shrink-0">
-                            1 
-                            <span class="">Like</span>
-                             / 0</span>
+                        <span class="font-bold text-sm">One-man Team</span>
                     </a>
                 </li>
             </ul>
         </section>
-        <section class="card p-4 space-y-6">
-            <div class="flex items-center mb-2">
-                <h3>Support this site</h3>
+        <section class="card p-4 border-b border-slate-600">
+            <div class="flex items-center mb-4 pb-1 border-slate-600 border-b">
+                <h2>Extra Team</h2>
             </div>
-            <ul>
-                <li class="mb-2">
-                    <a href="https://patreon.com/andreasjud" target="_blank" class="flex items-center">
-                        <div class="w-10">
-                            <img class="h-8 mr-1" alt="patreon" src="https://github.githubassets.com/images/modules/site/icons/funding_platforms/patreon.svg">
+            <ul class="hoverlist space-y-6">
+                <li>
+                    <a href="/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            <img class="w-16 h-16 rounded-full object-cover mr-3 shrink-0" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww">
+                            <span class="font-bold text-sm mr-1">Surawut H.</span>
                         </div>
-                        <span class="">Become my Patreon</span>
                     </a>
-                </li>             
+                </li>
+                <li>
+                    <a href="/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            <img class="w-16 h-16 rounded-full object-cover mr-3 shrink-0" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww">
+                            <span class="font-bold text-sm mr-1">Tana K.</span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/" class="flex items-stretch justify-between">
+                        <div class="flex items-center truncate">
+                            <img class="w-16 h-16 rounded-full object-cover mr-3 shrink-0" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YXZhdGFyfGVufDB8fDB8fHww">
+                            <span class="font-bold text-sm mr-1">Tuk Jaruya</span>
+                        </div>
+                    </a>
+                </li>
             </ul>
-
-            <div>
-                <a class="text-sm font-bold xtext-right block" href="/ajudmeister/">
-                    Thank you &#x2665; &nbsp &#8594;
-                </a>
-            </div>
         </section>
     </aside>
     
