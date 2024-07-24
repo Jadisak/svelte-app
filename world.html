@@ -30,13 +30,43 @@
 </style>
 
 <body class="bg-gray-400">
-    <nav class="flex w-full bg-amber-600 justify-center py-4 text-white sticky top-0 z-50">
-        <ul class="flex items-center [&>li>a]:px-4 [&>li>a]:py-2 [&>li>a:hover]:bg-amber-700">
-            <li><a href="" class="navbtn">Home</a></li>
-            <li><a href="" class="navbtn">About us</a></li>
-            <li><a href="" class="navbtn">Blog</a></li>
-        </ul>
-    </nav>
+    <header x-data="{ mobilenavOpen: false, chatOpen: false }" class="md:flex items-center justify-between [&>*]:px-6 bg-gradient-to-br from-pink-800 to-orange-600 h-12 text-white sticky top-0 z-40 max-w-6xl mx-auto xl:rounded-b-2xl">
+        <div class="flex items-center justify-between h-12">
+            <logo>
+                <a class="flex items-center gap-1" href="/">
+                    <span class=" px-2 border text-lg font-bold">IRVING</span>
+                    <span class="font-thin mx-2">Dev + Design</span>
+                </a>
+            </logo>
+            <mobileicon class="md:hidden">
+                <a @click="mobilenavOpen = !mobilenavOpen" class="h-8 p-1 duration-300 flex items-center justify-center cursor-pointer hover:bg-red-700">
+                    <img x-show="!mobilenavOpen" class="w-5 h-5 select-none" src="https://img.icons8.com/small/64/ffffff/menu.png"/> 
+                    <img x-show="mobilenavOpen" x-cloak class="w-5 h-5 select-none" src="https://img.icons8.com/small/64/ffffff/delete-sign.png"/>
+                </a>
+            </mobileicon>
+        </div>
+        <nav x-show="mobilenavOpen" x-cloak class="md:!block bg-gray-600/80 md:bg-gray-600/0 h-screen w-screen md:h-auto md:w-auto mt-0 md:mt-0 absolute md:relative z-[-1]"
+        x-transition:enter="duration-300 ease-out"
+        x-transition:enter-start="opacity-0 -translate-y-96"
+        x-transition:enter-end="opacity-100 translate-y-0">
+            <ul class="flex items-center navitems flex-col md:flex-row justify-center h-full -translate-y-10 md:translate-y-0 z-20 md:space-x-6 md:space-y-0 space-y-16">
+                
+                <li>
+                    <a href="/" class="hover:text-yellow-300">Home</a>
+                </li>
+                <li>
+                    <a href="/HTMx/htmx-alpine.html" class="hover:text-yellow-300">Works</a>
+                </li>
+                <li>
+                    <a href="/services.html" class="hover:text-yellow-300">Services</a>
+                </li>
+                <li>
+                    <a href="/world.html" class="hover:text-yellow-300">World</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </header>
 
     <hero 
     class="grid md:h-80 bg-gray-700 text-center text-white bg-cover bg-bottom 2xl:bg-center bg-[url('https://live.staticflickr.com/65535/49909538937_3255dcf9e7_b.jpg')]">
